@@ -6,7 +6,7 @@ from pandas.api.types import infer_dtype
 import os
 
 # Přímé vložení API klíče (pozor, jen pro testovací účely)
-llm = OpenAI(api_token="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")
+llm = OpenAI(api_token=os.environ["OPENAI_API_KEY"])
 pandas_ai = PandasAI(llm)
 
 st.set_page_config(page_title="AI Metadata Agent v2", layout="wide")
