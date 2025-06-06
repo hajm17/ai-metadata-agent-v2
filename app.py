@@ -5,8 +5,8 @@ from pandasai.llm.openai import OpenAI
 from pandas.api.types import infer_dtype
 import os
 
-# Získání klíče ze Streamlit Secrets
-llm = OpenAI(api_token=os.environ.get("OPENAI_API_KEY", ""))
+# Přímé vložení API klíče (pozor, jen pro testovací účely)
+llm = OpenAI(api_token="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")
 pandas_ai = PandasAI(llm)
 
 st.set_page_config(page_title="AI Metadata Agent v2", layout="wide")
