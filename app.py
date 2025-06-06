@@ -5,9 +5,8 @@ from pandasai.llm.openai import OpenAI
 from pandas.api.types import infer_dtype
 import os
 
-# Inicializace LLM (používá se lokální model, není potřeba API klíč)
-os.environ["PANDASAI_API_KEY"] = "demo"  # Pro demo model PandasAI
-llm = OpenAI(api_token=os.environ["OPENAI_API_KEY"])
+# Získání klíče ze Streamlit Secrets
+llm = OpenAI(api_token=os.environ.get("OPENAI_API_KEY", ""))
 pandas_ai = PandasAI(llm)
 
 st.set_page_config(page_title="AI Metadata Agent v2", layout="wide")
