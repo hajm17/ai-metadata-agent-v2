@@ -7,7 +7,7 @@ import os
 
 # Inicializace LLM (používá se lokální model, není potřeba API klíč)
 os.environ["PANDASAI_API_KEY"] = "demo"  # Pro demo model PandasAI
-llm = OpenAI(api_token="demo")
+llm = OpenAI(api_token=os.environ["OPENAI_API_KEY"])
 pandas_ai = PandasAI(llm)
 
 st.set_page_config(page_title="AI Metadata Agent v2", layout="wide")
